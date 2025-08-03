@@ -11,7 +11,7 @@ export const PostInfo = ({ post, users, comments }) => {
 
         <p>
           {' Posted by  '}
-          <UserInfo key={currentUser.id} user={currentUser} />;
+          <UserInfo user={currentUser} />;
         </p>
       </div>
 
@@ -19,9 +19,7 @@ export const PostInfo = ({ post, users, comments }) => {
 
       <hr />
 
-      {currentUser && (
-        <CommentList post={post} users={users} comments={comments} />
-      )}
+      {currentUser && <CommentList post={post} comments={comments} />}
     </div>
   );
 };
